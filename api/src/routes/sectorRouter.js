@@ -16,10 +16,10 @@ sectorRouter.get('/', async (req, res) => {
 })
 
 sectorRouter.post('/', async ( req, res) => {
-    const { sectorName, isDelete = false } = req.body;
+    const { sectorname, isdelete = false } = req.body;
     
     try {
-        let newSector = await postSector(sectorName, isDelete);
+        let newSector = await postSector(sectorname, isdelete);
         
         newSector? 
             res.status(200).json("success"):

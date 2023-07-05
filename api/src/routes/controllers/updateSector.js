@@ -5,7 +5,7 @@ const updateSector = async ( id, name ) => {
     try {
         const sector = await Sector.findByPk(id)
         await sector.update(
-            { sectorName:name},
+            { sectorname:name},
             { where:{ id:id }})
 
         return sector

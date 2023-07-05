@@ -1,11 +1,11 @@
 const { Sector } = require('../../bd');
 
-const postSector = async (name, isDelete) => {
+const postSector = async (name, isdelete) => {
     
     try {
         let newSector = await Sector.create({
-            sectorName: name,
-            isDelete: isDelete
+            sectorname: name,
+            isdelete: isdelete
         })
 
         return newSector

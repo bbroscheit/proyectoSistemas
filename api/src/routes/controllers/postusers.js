@@ -2,29 +2,33 @@ const { User } = require('../../bd')
 const { Sector } = require('../../bd')
 const { Pc } = require('../../bd')
 
-const postUsers = async( name, firstName, lastName, pc , sectorName) => {
+const postUsers = async( username, firstname, lastname, pc , sectorname) => {
     try {
         let newUser = await User.create({
-            name : name,
-            firstName: firstName,
-            lastName: lastName
+            username : username,
+            firstname: firstname,
+            lastname: lastname
         })
 
-        let setSector = await Sector.findAll({
-            sectorName : sectorName
+        if(sectorname){
+            let setSector = await Sector.findAll({
+            sectorname : sectorname
         })
-
+            newUser.addSector(setSector)
+        }
+        
+        if(pc){
         let setPc = await Pc.findAll({
             name:pc
         })
-
-        newUser.addSector(setSector)
         newUser.addPc(setPc)
+        }
+       
 
         return newUser
 
     } catch (e) {   
-        console.log(e.message)
+        console.log("error en postUsers",e.message)
     }
 }
 

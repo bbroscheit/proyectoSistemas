@@ -3,7 +3,7 @@ const { Sector } = require('../../bd');
 const getSector = async() => {
     try {
         let sectores = await Sector.findAll({
-            where: { isDelete: false},
+            where: { isdelete: false},
     });
 
         return sectores;

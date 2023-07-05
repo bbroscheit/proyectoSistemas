@@ -8,12 +8,12 @@ module.exports = (sequelize) => {
             autoIncrement: true,
             primaryKey: true
         },
-        sectorName:{
+        sectorname:{
             type: DataTypes.STRING,
             allowNull: false,
             defaultValue: 'Nombre de sector no ingresado'
         },
-        isDelete:{
+        isdelete:{
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },

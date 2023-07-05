@@ -13,17 +13,17 @@ module.exports = (sequelize) => {
             defaultValue: ' Name Undefined',
             allowNull: false
         }, 
-        firstName:{
+        firstname:{
             type: DataTypes.STRING,
             defaultValue: ' firstName Undefined',
             allowNull: false
         },
-        lastName:{
+        lastname:{
             type: DataTypes.STRING,
             defaultValue: ' LastName Undefined',
             allowNull: false
         },
-        isDelete:{
+        isdelete:{
             type: DataTypes.BOOLEAN,
             defaultValue : false
         },

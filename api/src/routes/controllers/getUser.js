@@ -5,7 +5,7 @@ const { Pc } = require('../../bd')
 const getUsers = async () => {
     try {
         let users = await User.findAll({
-           where: { isDelete : false}
+           where: { isdelete : false}
         })
         return users
     } catch (e) {

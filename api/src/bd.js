@@ -43,6 +43,8 @@ Pc.belongsToMany( User, { through: "pcUsers"});
 User.belongsTo(Sector);
 Sector.hasMany(User);
 
+Pc.belongsTo(Sector);
+Sector.hasMany(Pc);
 // Autenticamos y conectamos
 
 sequelize.authenticate()

@@ -4,7 +4,7 @@ const deleteSector = async (id) =>{
     try {
         const sector = await Sector.findByPk(id)
         await sector.update(
-            { isDelete:true},
+            { isdelete:true},
             { where:{ id:id }})
 
         return sector

@@ -13,22 +13,22 @@ module.exports = (sequelize) => {
             defaultValue: " Name undefined ",
             allowNull:false,
         },
-        vSO:{
+        vso:{
             type: DataTypes.STRING,
             defaultValue: " Sistem Undefined ",
             allowNull: false,
         },
-        ramMemory:{
+        rammemory:{
             type: DataTypes.STRING,
             defaultValue: " Memory undefined ",
             allowNull: false,
         },
-        hardDiskMemory:{
+        harddiskmemory:{
             type: DataTypes.STRING,
             defaultValue: " Hard Disk Memory undefined ",
             allowNull:false,
         },
-        hardDiskType:{
+        harddisktype:{
             type: DataTypes.STRING,
             defaultValue: " Disk Type undefined ",
             allowNull: false,
@@ -38,22 +38,22 @@ module.exports = (sequelize) => {
             defaultValue: " Processor undefined ",
             allowNull: false,
         },
-        vOffice:{
+        voffice:{
             type: DataTypes.STRING,
             defaultValue: " Office Version undefined ",
             allowNull: false,
         },
-        vAntivirus:{
+        vantivirus:{
             type: DataTypes.STRING,
             defaultValue: " Antivirus version undefined ",
             allowNull: false,
         },
-        lastCheck:{
+        lastcheck:{
             type: DataTypes.DATEONLY,
             defaultValue: " 01-01-2000 ",
             allowNull: false,
         },
-        isDelete:{
+        isdelete:{
             type: DataTypes.BOOLEAN,
             defaultValue: false,
         },

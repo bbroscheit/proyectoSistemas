@@ -8,6 +8,7 @@ require( './bd.js' );
 //cargamos las rutas
 const sectorRouter = require('./routes/sectorRouter.js');
 const userRouter = require('./routes/userRouter.js');
+const pcRouter = require('./routes/pcRouter.js');
 
 const server = express();
 server.name = 'API';
@@ -26,8 +27,11 @@ server.use ( ( req, res, next ) => {
 
 server.use ( express.json() );
 server.use ( cors() );
+
+// llamamos a los diferentes Routers
 server.use ( '/', sectorRouter )
 server.use ( '/', userRouter )
+server.use ( '/', pcRouter );
 
 server.use ( ( err, req, res, next ) => {
     const status = err.status || 500;
