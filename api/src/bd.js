@@ -37,14 +37,15 @@ const { User, Pc, Sector } = sequelize.models;
 
 // Relacionamos ambas tablas
 
-User.belongsToMany( Pc, { through: "pcUsers" });
-Pc.belongsToMany( User, { through: "pcUsers"});
+User.belongsToMany( Pc, { through: "pcUsers" } );
+Pc.belongsToMany( User, { through: "pcUsers"} );
 
 User.belongsTo(Sector);
 Sector.hasMany(User);
 
 Pc.belongsTo(Sector);
 Sector.hasMany(Pc);
+
 // Autenticamos y conectamos
 
 sequelize.authenticate()

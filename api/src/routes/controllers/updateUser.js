@@ -2,6 +2,7 @@ const { User } = require("../../bd");
 const { Sector } = require("../../bd");
 const { Pc } = require("../../bd");
 
+
 const updateUser = async (
   id,
   username,
@@ -10,6 +11,7 @@ const updateUser = async (
   sectorname,
   pc
 ) => {
+  
   
   try {
     let user = await User.findByPk(id, 
@@ -22,28 +24,30 @@ const updateUser = async (
         {
           model: Pc,
           attributes: ["name"],
-          // through:{
-          //   attributes: []
-          // }
+          through:{
+            attributes: []
+          }
         },
       ],
     }
     );
-
-
+    
     if(sectorname){
       const updateSector = await Sector.findOne({
       where: { sectorname: sectorname },
     });
+      
       await user.setSector();
-      await user.setSector(updateSector.id);
+      await user.setSector(updateSector);
     }
     
+
     if(pc){
       const updatePc = await Pc.findOne({
         where: { name: pc },
       })
-      await user.setPc(updatePc.id);
+      
+      await user.setPc(updatePc);
     }
   
     

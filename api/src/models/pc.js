@@ -1,8 +1,11 @@
 const { DataTypes } = require('sequelize');
 
+
 module.exports = (sequelize) => {
     sequelize.define('pc', {
-        id:{
+       
+
+id:{
             type: DataTypes.INTEGER,
             autoIncrement : true,
             primaryKey: true,
@@ -57,5 +60,5 @@ module.exports = (sequelize) => {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
         },
-    })
+     })
 }
